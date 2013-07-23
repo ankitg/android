@@ -5,17 +5,16 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import com.ankitguglani.samples.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.ankitguglani.samples.R;
 
 public class EditNoteActivity extends Activity implements View.OnClickListener {
 
@@ -49,6 +48,7 @@ public class EditNoteActivity extends Activity implements View.OnClickListener {
 		}
 		
 		saveButton.setOnClickListener(this);
+		emailButton.setOnClickListener(this);
 	}
 
 	private void initialize() {
@@ -107,8 +107,11 @@ public class EditNoteActivity extends Activity implements View.OnClickListener {
 				Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
 				emailIntent.setType("plain/text");
 //				emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, emailaddress);
+				if(titleEditText.getText().toString().length() > 0)
 				emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, titleEditText.getText().toString());
+				if(noteEditText.getText().toString().length() > 0)
 				emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, noteEditText.getText().toString());
+				if(titleEditText.getText().toString().length() > 0 || noteEditText.getText().toString().length() > 0)
 				startActivity(emailIntent);
 				break;
 			}
