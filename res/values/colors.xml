@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="list_view_background">#000000</color>
+    <color name="list_image_background">#ffffff</color>
+    <color name="list_text_color">#CECECE</color>
+</resources>
