@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.ankitguglani.samples.R;
 
@@ -60,6 +61,7 @@ public class PictureActivity extends Activity implements View.OnClickListener {
 			{
 				try {
 					WallpaperManager.getInstance(getApplicationContext()).setBitmap(bmp);
+					Toast.makeText(PictureActivity.this, "The new wallpaper has been set.", Toast.LENGTH_SHORT).show();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
