@@ -24,8 +24,9 @@ public class SamplesListActivity extends ListActivity {
 //						"com.ankitguglani.samples.camera.PictureActivity"};
 	
 	AppListItem splash = new AppListItem(0,"Splash Screen","com.ankitguglani.samples.SplashActivity", R.drawable.ic_launcher);
-	AppListItem notes = new AppListItem(0,"Notes App","com.ankitguglani.samples.notes.NotesListActivity", R.drawable.ic_launcher);
-	AppListItem photos = new AppListItem(0,"Photo App","com.ankitguglani.samples.camera.PictureActivity", R.drawable.camera);
+	AppListItem notes = new AppListItem(1,"Notes App","com.ankitguglani.samples.notes.NotesListActivity", R.drawable.ic_launcher);
+	AppListItem photos = new AppListItem(2,"Photo App","com.ankitguglani.samples.camera.PictureActivity", R.drawable.camera);
+	AppListItem notification = new AppListItem(3, "Notification.", "com.ankitguglani.samples.notification.NotificationBarActivity", R.drawable.ic_launcher);
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class SamplesListActivity extends ListActivity {
 		AppList.add(splash);
 		AppList.add(notes);
 		AppList.add(photos);
+		AppList.add(notification);
 		setListAdapter(new ApplicationListAdapter());
 	}
 

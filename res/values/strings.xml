@@ -16,4 +16,5 @@
     <string name="title_activity_picture">Camera Sample</string>
 	<string name="email">Email</string>
 	<string name="set_wallpaper">Set Wallpaper</string>
+	<string name="title_activity_notification">Notifications Sample</string>
 </resources>

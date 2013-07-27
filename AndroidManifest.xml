@@ -8,6 +8,7 @@
         android:minSdkVersion="10"
         android:targetSdkVersion="17" />
     <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:allowBackup="true"
@@ -56,6 +57,12 @@
             android:label="@string/title_activity_picture"
             android:screenOrientation="portrait" >
         </activity>
+
+        <activity
+            android:name="com.ankitguglani.samples.notification.NotificationBarActivity"
+            android:label="@string/title_activity_notification" >
+        </activity>
+        
         
     </application>
 
