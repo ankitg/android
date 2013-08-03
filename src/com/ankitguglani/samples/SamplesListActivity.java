@@ -16,6 +16,9 @@ import android.widget.TextView;
 
 public class SamplesListActivity extends ListActivity {
 
+	static final String tag = "com.ankitguglani.samples.SamplesListActivity";
+	static final Class<SamplesListActivity> self = com.ankitguglani.samples.SamplesListActivity.class;
+	
 	List<AppListItem> AppList = new ArrayList<AppListItem>();	
 	
 //	String display[] = {"Splash Screen","Notes App","Photo App"};

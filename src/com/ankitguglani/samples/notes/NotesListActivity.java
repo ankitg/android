@@ -24,6 +24,9 @@ import android.widget.ListView;
 
 public class NotesListActivity extends Activity {
 	
+	static final String tag = "com.ankitguglani.samples.notes.NotesListActivity";
+	static final Class<NotesListActivity> self = com.ankitguglani.samples.notes.NotesListActivity.class;
+	
 	private List<Note> notes = new ArrayList<Note>();
 	private ListView notesListView;
 	private int editingNoteIndex = -1;

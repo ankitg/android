@@ -14,8 +14,12 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.ankitguglani.samples.R;
+import com.ankitguglani.samples.SamplesListActivity;
 
 public class PictureActivity extends Activity implements View.OnClickListener {
+	
+	static final String tag = "com.ankitguglani.samples.camera.PictureActivity";
+	static final Class<PictureActivity> self = com.ankitguglani.samples.camera.PictureActivity.class;	
 	
 	ImageView pictureImageView;
 	Button setWallpaperButton;
@@ -40,6 +44,7 @@ public class PictureActivity extends Activity implements View.OnClickListener {
 		if(bmp == null)
 			{
 				pictureImageView.setImageDrawable(getWallpaper());
+				// set bmp to wallpaper here.
 			}
 
 		// Add OnClick Listeners

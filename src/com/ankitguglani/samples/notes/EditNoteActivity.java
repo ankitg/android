@@ -15,9 +15,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.ankitguglani.samples.R;
+import com.ankitguglani.samples.camera.PictureActivity;
 
 public class EditNoteActivity extends Activity implements View.OnClickListener {
 
+	static final String tag = "com.ankitguglani.samples.notes.EditNoteActivity";
+	static final Class<EditNoteActivity> self = com.ankitguglani.samples.notes.EditNoteActivity.class;	
+	
 	private boolean isInEditMode = true;
 	
 	EditText titleEditText, noteEditText;
