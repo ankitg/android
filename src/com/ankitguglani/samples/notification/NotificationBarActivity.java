@@ -15,8 +15,8 @@ import com.ankitguglani.samples.notes.NotesListActivity;
 
 public class NotificationBarActivity extends Activity implements OnClickListener{
 
-	static final String tag = "com.ankitguglani.samples.notification.NotificationBarActivity";
-	static final Class<NotificationBarActivity> self = com.ankitguglani.samples.notification.NotificationBarActivity.class;
+	private static final String TAG = "com.ankitguglani.samples.notification.NotificationBarActivity";
+	private static final Class<NotificationBarActivity> SELF = com.ankitguglani.samples.notification.NotificationBarActivity.class;
 	
 	NotificationManager notificationManager;
 	static final int uniqueID = 2190795;
@@ -32,7 +32,7 @@ public class NotificationBarActivity extends Activity implements OnClickListener
 	}
 
 	public void onClick(View v) {
-		Intent intent = new Intent(this, self);
+		Intent intent = new Intent(this, SELF);
 		PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 		String title = "Ankit does Android.";
 		String body = "This is a test notification from Ankit.";

@@ -5,13 +5,22 @@ public class AppListItem {
 	private String displayName;
 	private String className;
 	private int imageResourceId;
+	private boolean isInternal;
 	
-	public AppListItem (int id, String displayName, String className, int imageResourceId)
+	public AppListItem (int id, String displayName, String className, int imageResourceId, boolean isIntenal)
 	{
 		setId(id);
 		setDisplayName(displayName);
 		setClassName(className);
-		setImageResourceId(imageResourceId);
+		if(imageResourceId != 0)
+		{
+			setImageResourceId(imageResourceId);
+		}
+		else
+		{
+			setImageResourceId(R.drawable.ic_launcher);
+		}
+		setInternal(isIntenal);
 	}
 	
 	public int getId() {
@@ -40,5 +49,13 @@ public class AppListItem {
 	}
 	public void setImageResourceId(int imageResourceId) {
 		this.imageResourceId = imageResourceId;
+	}
+
+	public boolean isInternal() {
+		return isInternal;
+	}
+
+	public void setInternal(boolean isInternal) {
+		this.isInternal = isInternal;
 	}
 }

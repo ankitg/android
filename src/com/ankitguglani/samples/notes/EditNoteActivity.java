@@ -19,8 +19,8 @@ import com.ankitguglani.samples.camera.PictureActivity;
 
 public class EditNoteActivity extends Activity implements View.OnClickListener {
 
-	static final String tag = "com.ankitguglani.samples.notes.EditNoteActivity";
-	static final Class<EditNoteActivity> self = com.ankitguglani.samples.notes.EditNoteActivity.class;	
+	private static final String TAG = "com.ankitguglani.samples.notes.EditNoteActivity";
+	private static final Class<EditNoteActivity> SELF = com.ankitguglani.samples.notes.EditNoteActivity.class;	
 	
 	private boolean isInEditMode = true;
 	

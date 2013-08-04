@@ -9,8 +9,8 @@ import com.ankitguglani.samples.R;
 
 public class SplashActivity extends Activity {
 
-	static final String tag = "com.ankitguglani.samples.SplashActivity";
-	static final Class<SplashActivity> self = com.ankitguglani.samples.SplashActivity.class;
+	private static final String TAG = "com.ankitguglani.samples.SplashActivity";
+	private static final Class<SplashActivity> SELF = com.ankitguglani.samples.SplashActivity.class;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {

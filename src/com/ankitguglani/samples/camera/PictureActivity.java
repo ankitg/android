@@ -18,8 +18,8 @@ import com.ankitguglani.samples.SamplesListActivity;
 
 public class PictureActivity extends Activity implements View.OnClickListener {
 	
-	static final String tag = "com.ankitguglani.samples.camera.PictureActivity";
-	static final Class<PictureActivity> self = com.ankitguglani.samples.camera.PictureActivity.class;	
+	private static final String TAG = "com.ankitguglani.samples.camera.PictureActivity";
+	private static final Class<PictureActivity> SELF = com.ankitguglani.samples.camera.PictureActivity.class;	
 	
 	ImageView pictureImageView;
 	Button setWallpaperButton;

@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.ListActivity;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +20,10 @@ import android.widget.TextView;
 
 public class SamplesListActivity extends ListActivity {
 
-	static final String tag = "com.ankitguglani.samples.SamplesListActivity";
-	static final Class<SamplesListActivity> self = com.ankitguglani.samples.SamplesListActivity.class;
+	private static final String TAG = "com.ankitguglani.samples.SamplesListActivity";
+	private static final Class<SamplesListActivity> SELF = com.ankitguglani.samples.SamplesListActivity.class;
+	
+	int samplesCount = 0;
 	
 	List<AppListItem> AppList = new ArrayList<AppListItem>();	
 	
@@ -26,10 +32,10 @@ public class SamplesListActivity extends ListActivity {
 //						"com.ankitguglani.samples.notes.NotesListActivity",
 //						"com.ankitguglani.samples.camera.PictureActivity"};
 	
-	AppListItem splash = new AppListItem(0,"Splash Screen","com.ankitguglani.samples.SplashActivity", R.drawable.ic_launcher);
-	AppListItem notes = new AppListItem(1,"Notes App","com.ankitguglani.samples.notes.NotesListActivity", R.drawable.ic_launcher);
-	AppListItem photos = new AppListItem(2,"Photo App","com.ankitguglani.samples.camera.PictureActivity", R.drawable.camera);
-	AppListItem notification = new AppListItem(3, "Notification.", "com.ankitguglani.samples.notification.NotificationBarActivity", R.drawable.ic_launcher);
+	AppListItem splash = new AppListItem(++samplesCount,"Splash Screen","com.ankitguglani.samples.SplashActivity", 0, true);
+	AppListItem notes = new AppListItem(++samplesCount,"Notes App","com.ankitguglani.samples.notes.NotesListActivity", 0, true);
+	AppListItem photos = new AppListItem(++samplesCount,"Photo App","com.ankitguglani.samples.camera.PictureActivity", R.drawable.camera, true);
+	AppListItem notification = new AppListItem(++samplesCount, "Notification.", "com.ankitguglani.samples.notification.NotificationBarActivity", 0, true);
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +47,27 @@ public class SamplesListActivity extends ListActivity {
 		AppList.add(notes);
 		AppList.add(photos);
 		AppList.add(notification);
+		
+		// Check for additionally installed applications.
+		
+//		final Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+//		mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+//		final List<ResolveInfo> pkgAppsList = this.getPackageManager().queryIntentActivities( mainIntent, 0);
+//		Log.d(tag,pkgAppsList.toString());
+
+		final PackageManager pm = getPackageManager();
+		//get a list of installed apps.
+		List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
+
+		for (ApplicationInfo packageInfo : packages) {
+//		    Log.d(TAG, "Installed package :" + packageInfo.packageName);
+//		    Log.d(TAG, "Launch Activity :" + pm.getLaunchIntentForPackage(packageInfo.packageName)); 
+			if(packageInfo.packageName.contains("com.codewithchris"))
+			{
+				AppList.add(new AppListItem(++samplesCount, packageInfo.packageName.toString(), pm.getLaunchIntentForPackage(packageInfo.packageName).toString(), 0,false));
+			}
+		}
+		
 		setListAdapter(new ApplicationListAdapter());
 	}
 
@@ -49,11 +76,22 @@ public class SamplesListActivity extends ListActivity {
 		super.onListItemClick(l, v, position, id);
 		try {
 //			Class sampleAppClass = Class.forName(classes[position]);
-			Class sampleAppClass = Class.forName(AppList.get(position).getClassName().toString());
-			Intent sampleAppIntent = new Intent(SamplesListActivity.this, sampleAppClass);
-			startActivity(sampleAppIntent);
+
+			if(AppList.get(position).isInternal())
+			{
+				Class sampleAppClass = Class.forName(AppList.get(position).getClassName().toString());
+				Intent sampleAppIntent = new Intent(SamplesListActivity.this, sampleAppClass);			
+				startActivity(sampleAppIntent);
+			}
+			else
+			{
+				Intent externalSampleIntent = new Intent("com.codewithchris");
+				externalSampleIntent.setComponent(new ComponentName("com.codewithchris","com.codewithchris.SplashActivity"));
+				startActivity(externalSampleIntent);
+			}
+			
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			Log.e(TAG, "Class not found exception: " + e);
 		}
 	}
 	
