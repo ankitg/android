@@ -64,7 +64,7 @@ public class SamplesListActivity extends ListActivity {
 //		    Log.d(TAG, "Launch Activity :" + pm.getLaunchIntentForPackage(packageInfo.packageName)); 
 			if(packageInfo.packageName.contains("com.codewithchris"))
 			{
-				AppList.add(new AppListItem(++samplesCount, packageInfo.packageName.toString(), pm.getLaunchIntentForPackage(packageInfo.packageName).toString(), 0,false));
+				AppList.add(new AppListItem(++samplesCount, "Code with Chris", "com.ankitguglani.samples.codewithchris", 0, false));
 			}
 		}
 		
@@ -85,8 +85,11 @@ public class SamplesListActivity extends ListActivity {
 			}
 			else
 			{
-				Intent externalSampleIntent = new Intent("com.codewithchris");
-				externalSampleIntent.setComponent(new ComponentName("com.codewithchris","com.codewithchris.SplashActivity"));
+//				Intent externalSampleIntent = new Intent("com.codewithchris");
+//				externalSampleIntent.setComponent(new ComponentName("com.codewithchris","com.codewithchris.SplashActivity"));
+//				startActivity(externalSampleIntent);
+				Intent externalSampleIntent = new Intent();
+				externalSampleIntent.setAction(AppList.get(position).getClassName().toString());
 				startActivity(externalSampleIntent);
 			}
 			
