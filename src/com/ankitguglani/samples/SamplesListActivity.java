@@ -33,7 +33,7 @@ public class SamplesListActivity extends ListActivity {
 //						"com.ankitguglani.samples.camera.PictureActivity"};
 	
 	AppListItem splash = new AppListItem(++samplesCount,"Splash Screen","com.ankitguglani.samples.SplashActivity", 0, true);
-	AppListItem notes = new AppListItem(++samplesCount,"Notes App","com.ankitguglani.samples.notes.NotesListActivity", 0, true);
+	AppListItem notes = new AppListItem(++samplesCount,"Notes App","com.ankitguglani.samples.notes.NotesListActivity", R.drawable.notes, true);
 	AppListItem photos = new AppListItem(++samplesCount,"Photo App","com.ankitguglani.samples.camera.PictureActivity", R.drawable.camera, true);
 	AppListItem notification = new AppListItem(++samplesCount, "Notification.", "com.ankitguglani.samples.notification.NotificationBarActivity", 0, true);
 	
