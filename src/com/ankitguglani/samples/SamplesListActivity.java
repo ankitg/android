@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.ListActivity;
-import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -49,19 +48,10 @@ public class SamplesListActivity extends ListActivity {
 		AppList.add(notification);
 		
 		// Check for additionally installed applications.
-		
-//		final Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
-//		mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-//		final List<ResolveInfo> pkgAppsList = this.getPackageManager().queryIntentActivities( mainIntent, 0);
-//		Log.d(tag,pkgAppsList.toString());
-
 		final PackageManager pm = getPackageManager();
-		//get a list of installed apps.
 		List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
 
 		for (ApplicationInfo packageInfo : packages) {
-//		    Log.d(TAG, "Installed package :" + packageInfo.packageName);
-//		    Log.d(TAG, "Launch Activity :" + pm.getLaunchIntentForPackage(packageInfo.packageName)); 
 			if(packageInfo.packageName.contains("com.codewithchris"))
 			{
 				AppList.add(new AppListItem(++samplesCount, "Code with Chris", "com.ankitguglani.samples.codewithchris", 0, false));
@@ -75,8 +65,6 @@ public class SamplesListActivity extends ListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
 		try {
-//			Class sampleAppClass = Class.forName(classes[position]);
-
 			if(AppList.get(position).isInternal())
 			{
 				Class sampleAppClass = Class.forName(AppList.get(position).getClassName().toString());
@@ -85,9 +73,6 @@ public class SamplesListActivity extends ListActivity {
 			}
 			else
 			{
-//				Intent externalSampleIntent = new Intent("com.codewithchris");
-//				externalSampleIntent.setComponent(new ComponentName("com.codewithchris","com.codewithchris.SplashActivity"));
-//				startActivity(externalSampleIntent);
 				Intent externalSampleIntent = new Intent();
 				externalSampleIntent.setAction(AppList.get(position).getClassName().toString());
 				startActivity(externalSampleIntent);
@@ -120,6 +105,4 @@ public class SamplesListActivity extends ListActivity {
 		}
 		
 	}
-
-	
 }

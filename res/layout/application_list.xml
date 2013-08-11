@@ -4,39 +4,45 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <ListView
-        android:id="@android:id/list"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="fill_parent" 
-        android:layout_weight="0.1">
-    </ListView>
+        android:layout_height="wrap_content" >
 
-    <SlidingDrawer
-        android:id="@+id/slidingDrawer1"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="0.9"
-        android:content="@+id/content"
-        android:handle="@+id/handle" >
-
-        <Button
-            android:id="@+id/handle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ABOUT" />
-
-        <LinearLayout
-            android:id="@+id/content"
+        <ListView
+            android:id="@android:id/list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
-            <TextView
-                android:id="@+id/aboutTextField"
-                android:text="Hi there, this is just me (Ankit) tinkering around with Android learning how it works. Hope you enjoy the small samples here ^_^"
+            android:layout_height="fill_parent" >
+        </ListView>
+
+        <SlidingDrawer
+            android:id="@+id/slidingDrawer1"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:content="@+id/content"
+            android:handle="@+id/handle" >
+
+            <Button
+                android:id="@+id/handle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ABOUT" />
+
+            <LinearLayout
+                android:id="@+id/content"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </TextView>
-        </LinearLayout>
-    </SlidingDrawer>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:background="@android:color/white">
+
+                <TextView
+                    android:id="@+id/aboutTextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hi there, this is just me (Ankit) tinkering around with Android learning how it works. Hope you enjoy the small sample Apps here ^_^" >
+                </TextView>
+            </LinearLayout>
+        </SlidingDrawer>
+    </FrameLayout>
 
 </LinearLayout>
