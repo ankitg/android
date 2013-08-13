@@ -52,9 +52,13 @@ public class SamplesListActivity extends ListActivity {
 		List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
 
 		for (ApplicationInfo packageInfo : packages) {
-			if(packageInfo.packageName.contains("com.codewithchris"))
+			if(packageInfo.packageName.contains("com.codewithchris")) // Code with Chris
 			{
 				AppList.add(new AppListItem(++samplesCount, "Code with Chris", "com.ankitguglani.samples.codewithchris", 0, false));
+			}
+			if(packageInfo.packageName.contains("com.ankitguglani.samples.nfc")) // NFC Text read Sample
+			{
+				AppList.add(new AppListItem(++samplesCount, "NFC Sample", "com.ankitguglani.samples.nfc", 0, false));
 			}
 		}
 		
