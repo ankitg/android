@@ -58,7 +58,7 @@ public class SamplesListActivity extends ListActivity {
 			}
 			if(packageInfo.packageName.contains("com.ankitguglani.samples.nfc")) // NFC Text read Sample
 			{
-				AppList.add(new AppListItem(++samplesCount, "NFC Sample", "com.ankitguglani.samples.nfc", 0, false));
+				AppList.add(new AppListItem(++samplesCount, "NFC Sample", "com.ankitguglani.samples.nfc", R.drawable.nfc, false));
 			}
 		}
 		
