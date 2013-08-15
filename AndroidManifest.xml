@@ -23,6 +23,10 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="com.ankitguglani.samples.SplashActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         
         <activity
@@ -56,14 +60,21 @@
             android:name="com.ankitguglani.samples.camera.PictureActivity"
             android:label="@string/title_activity_picture"
             android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.ankitguglani.samples.camera.PictureActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
         <activity
             android:name="com.ankitguglani.samples.notification.NotificationBarActivity"
             android:label="@string/title_activity_notification" >
+            <intent-filter>
+                <action android:name="com.ankitguglani.samples.notification.NotificationBarActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
-        
-        
+
     </application>
 
 </manifest>

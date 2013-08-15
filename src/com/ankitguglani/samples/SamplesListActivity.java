@@ -68,21 +68,14 @@ public class SamplesListActivity extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
-		try {
-			if(AppList.get(position).isInternal())
-			{
-				Class sampleAppClass = Class.forName(AppList.get(position).getClassName().toString());
-				Intent sampleAppIntent = new Intent(SamplesListActivity.this, sampleAppClass);			
-				startActivity(sampleAppIntent);
-			}
-			else
-			{
-				Intent externalSampleIntent = new Intent();
-				externalSampleIntent.setAction(AppList.get(position).getClassName().toString());
-				startActivity(externalSampleIntent);
-			}
-			
-		} catch (ClassNotFoundException e) {
+		try 
+		{
+			Intent sampleAppIntent = new Intent();
+			sampleAppIntent.setAction(AppList.get(position).getActionName().toString());
+			startActivity(sampleAppIntent);
+		} 
+		catch (Exception e) 
+		{
 			Log.e(TAG, "Class not found exception: " + e);
 		}
 	}

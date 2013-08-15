@@ -3,15 +3,15 @@ package com.ankitguglani.samples;
 public class AppListItem {
 	private int id;
 	private String displayName;
-	private String className;
+	private String actionName;
 	private int imageResourceId;
 	private boolean isInternal;
 	
-	public AppListItem (int id, String displayName, String className, int imageResourceId, boolean isIntenal)
+	public AppListItem (int id, String displayName, String actionName, int imageResourceId, boolean isIntenal)
 	{
 		setId(id);
 		setDisplayName(displayName);
-		setClassName(className);
+		setActionName(actionName);
 		if(imageResourceId != 0)
 		{
 			setImageResourceId(imageResourceId);
@@ -37,11 +37,11 @@ public class AppListItem {
 		this.displayName = displayName;
 	}
 	
-	public String getClassName() {
-		return className;
+	public String getActionName() {
+		return actionName;
 	}
-	public void setClassName(String className) {
-		this.className = className;
+	public void setActionName(String actionName) {
+		this.actionName = actionName;
 	}
 	
 	public int getImageResourceId() {
