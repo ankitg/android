@@ -54,7 +54,7 @@ public class SamplesListActivity extends ListActivity {
 		for (ApplicationInfo packageInfo : packages) {
 			if(packageInfo.packageName.contains("com.codewithchris")) // Code with Chris
 			{
-				AppList.add(new AppListItem(++samplesCount, "Code with Chris", "com.ankitguglani.samples.codewithchris", 0, false));
+				AppList.add(new AppListItem(++samplesCount, "Code with Chris", "com.ankitguglani.samples.codewithchris", R.drawable.codewithchris, false));
 			}
 			if(packageInfo.packageName.contains("com.ankitguglani.samples.nfc")) // NFC Text read Sample
 			{
