@@ -17,4 +17,5 @@
 	<string name="email">Email</string>
 	<string name="set_wallpaper">Set Wallpaper</string>
 	<string name="title_activity_notification">Notifications Sample</string>
+	<string name="about_button_description">About panel, button.</string>
 </resources>
