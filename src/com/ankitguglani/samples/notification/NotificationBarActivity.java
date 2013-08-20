@@ -11,7 +11,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.ankitguglani.samples.R;
-import com.ankitguglani.samples.notes.NotesListActivity;
+import com.parse.ParseInstallation;
+import com.parse.PushService;
 
 public class NotificationBarActivity extends Activity implements OnClickListener{
 
@@ -29,6 +30,10 @@ public class NotificationBarActivity extends Activity implements OnClickListener
 		stat.setOnClickListener(this);
 		notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 		notificationManager.cancel(uniqueID);
+		
+		//Parse Push Notification
+		PushService.setDefaultPushCallback(this, SELF);
+		ParseInstallation.getCurrentInstallation().saveInBackground();
 	}
 
 	public void onClick(View v) {
