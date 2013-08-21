@@ -14,8 +14,11 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_samples_list">Sample Applications</string>
     <string name="title_activity_picture">Camera Sample</string>
-	<string name="email">Email</string>
-	<string name="set_wallpaper">Set Wallpaper</string>
-	<string name="title_activity_notification">Notifications Sample</string>
-	<string name="about_button_description">About panel, button.</string>
+    <string name="email">Email</string>
+    <string name="set_wallpaper">Set Wallpaper</string>
+    <string name="title_activity_notification">Notifications Sample</string>
+    <string name="about_button_description">About panel, button.</string>
+    <string name="title_activity_host_ip">Webserver</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

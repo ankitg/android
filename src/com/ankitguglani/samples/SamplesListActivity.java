@@ -35,6 +35,7 @@ public class SamplesListActivity extends ListActivity {
 	AppListItem notes = new AppListItem(++samplesCount,"Notes App","com.ankitguglani.samples.notes.NotesListActivity", R.drawable.notes, true);
 	AppListItem photos = new AppListItem(++samplesCount,"Photo App","com.ankitguglani.samples.camera.PictureActivity", R.drawable.camera, true);
 	AppListItem notification = new AppListItem(++samplesCount, "Notification Sample", "com.ankitguglani.samples.notification.NotificationBarActivity", R.drawable.notification_icon, true);
+	AppListItem webserver = new AppListItem(++samplesCount, "Web Server", "com.ankitguglani.samples.webserver.HostIPActivity", 0, true);
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,7 @@ public class SamplesListActivity extends ListActivity {
 		AppList.add(notes);
 		AppList.add(photos);
 		AppList.add(notification);
+		AppList.add(webserver);
 		
 		// Check for additionally installed applications.
 		final PackageManager pm = getPackageManager();
