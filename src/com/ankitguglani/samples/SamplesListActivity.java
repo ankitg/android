@@ -35,7 +35,7 @@ public class SamplesListActivity extends ListActivity {
 	AppListItem notes = new AppListItem(++samplesCount,"Notes App","com.ankitguglani.samples.notes.NotesListActivity", R.drawable.notes, true);
 	AppListItem photos = new AppListItem(++samplesCount,"Photo App","com.ankitguglani.samples.camera.PictureActivity", R.drawable.camera, true);
 	AppListItem notification = new AppListItem(++samplesCount, "Notification Sample", "com.ankitguglani.samples.notification.NotificationBarActivity", R.drawable.notification_icon, true);
-	AppListItem webserver = new AppListItem(++samplesCount, "Web Server", "com.ankitguglani.samples.webserver.HostIPActivity", 0, true);
+	AppListItem webserver = new AppListItem(++samplesCount, "Web Server", "com.ankitguglani.samples.webserver.HostIPActivity", R.drawable.webserver_icon, true);
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
