@@ -20,5 +20,6 @@
     <string name="about_button_description">About panel, button.</string>
     <string name="title_activity_host_ip">Webserver</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_notes_widget">Notes Widget</string>
 
 </resources>
